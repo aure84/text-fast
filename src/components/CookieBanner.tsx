@@ -8,7 +8,12 @@ export default function CookieBanner() {
     if (!localStorage.getItem('cookie-consent')) setVisible(true)
   }, [])
 
-const accept = () => { localStorage.setItem('cookie-consent', 'accepted'); setVisible(false) }
+  useEffect(() => {
+    document.body.style.paddingBottom = visible ? '16px' : ''
+    return () => { document.body.style.paddingBottom = '' }
+  }, [visible])
+
+  const accept = () => { localStorage.setItem('cookie-consent', 'accepted'); setVisible(false) }
 
   if (!visible) return null
 
