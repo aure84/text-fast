@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, type Plugin } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
 function fixMediaRangeSyntax(): Plugin {
@@ -8,8 +8,10 @@ function fixMediaRangeSyntax(): Plugin {
       for (const chunk of Object.values(bundle)) {
         if (chunk.type === 'asset' && typeof chunk.source === 'string' && chunk.fileName.endsWith('.css')) {
           chunk.source = chunk.source
-            .replace(/\(width<=(\d+)px\)/g, '(max-width:$1px)')
-            .replace(/\(width>=(\d+)px\)/g, '(min-width:$1px)')
+            .replace(/\(width<=([\d.]+)px\)/g, '(max-width:$1px)')
+            .replace(/\(width>=([\d.]+)px\)/g, '(min-width:$1px)')
+            .replace(/\(height<=([\d.]+)px\)/g, '(max-height:$1px)')
+            .replace(/\(height>=([\d.]+)px\)/g, '(min-height:$1px)')
         }
       }
     },
