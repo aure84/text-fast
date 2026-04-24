@@ -1,0 +1,5 @@
+.section { margin-top: var(--spacing-xl); }
+.heading { font-size: 1rem; font-weight: 600; margin-bottom: var(--spacing-md); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; }
+.grid { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+.card { padding: var(--spacing-sm) var(--spacing-md); background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; color: var(--primary); text-decoration: none; }
+.card:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
