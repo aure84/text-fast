@@ -1,0 +1,25 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  z-index: 200;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--primary-hover); }
