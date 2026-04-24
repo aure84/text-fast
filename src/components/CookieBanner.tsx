@@ -9,7 +9,7 @@ export default function CookieBanner() {
   }, [])
 
   useEffect(() => {
-    document.body.style.paddingBottom = visible ? '80px' : ''
+    document.body.style.paddingBottom = visible ? '56px' : ''
     return () => { document.body.style.paddingBottom = '' }
   }, [visible])
 
