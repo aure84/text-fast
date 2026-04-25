@@ -1,8 +1,4 @@
 .banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
   padding: var(--spacing-md) var(--spacing-lg);
@@ -10,7 +6,6 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
-  z-index: 200;
   font-size: 0.9rem;
   flex-wrap: wrap;
 }

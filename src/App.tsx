@@ -13,6 +13,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
+      <main style={{ flex: 1 }}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/:slug" element={<ToolPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </main>
       <Footer />
       <CookieBanner />
     </BrowserRouter>
