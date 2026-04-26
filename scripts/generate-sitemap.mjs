@@ -14,11 +14,13 @@ const SLUGS = [
   'slug-generator',
   'url-encoder-decoder',
   'text-reverser',
+  'password-generator',
 ]
 
 const urls = [
   { loc: BASE, priority: '1.0' },
   ...SLUGS.map(s => ({ loc: `${BASE}/${s}`, priority: '0.9' })),
+  { loc: `${BASE}/about`, priority: '0.5' },
   { loc: `${BASE}/privacy`, priority: '0.3' },
   { loc: `${BASE}/terms`, priority: '0.3' },
   { loc: `${BASE}/cookies`, priority: '0.3' },

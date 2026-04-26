@@ -18,6 +18,7 @@ import { removeWhitespace } from '../tools/whitespaceRemover'
 import { generateSlug } from '../tools/slugGenerator'
 import { encodeUrl, decodeUrl } from '../tools/urlEncoderDecoder'
 import { reverseChars, reverseWords, reverseLines } from '../tools/textReverser'
+import { generatePassword } from '../tools/passwordGenerator'
 import styles from './ToolPage.module.css'
 
 const TOOL_VIEWS: Record<string, React.ComponentType<{ tool: ToolMeta }>> = {
@@ -31,6 +32,7 @@ const TOOL_VIEWS: Record<string, React.ComponentType<{ tool: ToolMeta }>> = {
   'slug-generator': SlugGeneratorView,
   'url-encoder-decoder': UrlEncoderDecoderView,
   'text-reverser': TextReverserView,
+  'password-generator': PasswordGeneratorView,
 }
 
 export default function ToolPage() {
@@ -256,6 +258,68 @@ function TextReverserView({ tool }: { tool: ToolMeta }) {
       <TextInput value={input} onChange={setInput} label={tool.inputLabel} />
       <ResultPanel label={tool.outputLabel} copyText={output}>
         <pre className={styles.pre}>{output || <span className={styles.placeholder}>Reversed text will appear here</span>}</pre>
+      </ResultPanel>
+    </>
+  )
+}
+
+function PasswordGeneratorView(_: { tool: ToolMeta }) {
+  const [length, setLength] = useState(16)
+  const [uppercase, setUppercase] = useState(true)
+  const [lowercase, setLowercase] = useState(true)
+  const [numbers, setNumbers] = useState(true)
+  const [symbols, setSymbols] = useState(false)
+  const [result, setResult] = useState(() =>
+    generatePassword({ length: 16, uppercase: true, lowercase: true, numbers: true, symbols: false })
+  )
+
+  const generate = () =>
+    setResult(generatePassword({ length, uppercase, lowercase, numbers, symbols }))
+
+  const strengthColor: Record<string, string> = {
+    'weak': '#ef4444',
+    'fair': '#f97316',
+    'strong': '#22c55e',
+    'very-strong': '#16a34a',
+  }
+
+  return (
+    <>
+      <div className={styles.pwControls}>
+        <div className={styles.pwLengthRow}>
+          <label className={styles.pwLabel}>Length: <strong>{length}</strong></label>
+          <input
+            type="range" min={8} max={64} value={length}
+            onChange={e => setLength(Number(e.target.value))}
+            className={styles.pwSlider}
+          />
+        </div>
+        <div className={styles.pwCheckboxes}>
+          {([
+            ['Uppercase (A–Z)', uppercase, setUppercase],
+            ['Lowercase (a–z)', lowercase, setLowercase],
+            ['Numbers (0–9)', numbers, setNumbers],
+            ['Symbols (!@#…)', symbols, setSymbols],
+          ] as [string, boolean, (v: boolean) => void][]).map(([label, checked, setter]) => (
+            <label key={label} className={styles.pwCheck}>
+              <input type="checkbox" checked={checked} onChange={e => setter(e.target.checked)} />
+              {label}
+            </label>
+          ))}
+        </div>
+        <button className={styles.pwGenBtn} onClick={generate}>Generate</button>
+      </div>
+
+      <ResultPanel label="Generated password" copyText={result.password}>
+        <p className={styles.pwOutput}>{result.password || <span className={styles.placeholder}>Select at least one character type</span>}</p>
+        {result.password && (
+          <div className={styles.pwMeta}>
+            <span className={styles.pwStrength} style={{ color: strengthColor[result.strength] }}>
+              {result.strength.replace('-', ' ')}
+            </span>
+            <span className={styles.pwEntropy}>{result.entropy} bits entropy</span>
+          </div>
+        )}
       </ResultPanel>
     </>
   )

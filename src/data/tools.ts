@@ -248,6 +248,29 @@ export const TOOLS: ToolMeta[] = [
     ],
     related: ['text-case-converter', 'url-encoder-decoder', 'word-counter'],
   },
+  {
+    slug: 'password-generator',
+    title: 'Password Generator — Strong Random Passwords Online',
+    description: 'Generate strong, random passwords with custom length and character sets. Free online password generator — no data stored.',
+    heading: 'Password Generator',
+    subheading: 'Generate strong, random passwords instantly. Nothing is stored or sent.',
+    intro: 'The Password Generator creates cryptographically random passwords using your browser\'s built-in secure random number generator. Choose the length and which character types to include — uppercase letters, lowercase letters, numbers, and symbols. Nothing you generate is ever sent to a server or stored anywhere.',
+    howTo: [
+      'Set the desired password length using the slider (8–64 characters).',
+      'Toggle the character types you want to include — uppercase, lowercase, numbers, symbols.',
+      'Click "Generate" to create a new password, then use the copy button to copy it to your clipboard.',
+    ],
+    inputLabel: '',
+    outputLabel: 'Generated password',
+    faq: [
+      { q: 'Is this password generator truly random?', a: 'Yes. It uses the Web Crypto API (crypto.getRandomValues), which is a cryptographically secure random number generator built into all modern browsers.' },
+      { q: 'Are my passwords stored or logged?', a: 'No. All generation happens locally in your browser using JavaScript. Nothing is transmitted to any server.' },
+      { q: 'How long should my password be?', a: 'Security experts recommend at least 16 characters for most accounts. For critical accounts like email or banking, use 20 or more characters with all character types enabled.' },
+      { q: 'What does password entropy mean?', a: 'Entropy measures how unpredictable a password is, in bits. Higher entropy means harder to crack. Aim for at least 80 bits of entropy for strong security.' },
+      { q: 'Should I use symbols in my passwords?', a: 'Yes, if the service allows it. Adding symbols significantly increases the number of possible combinations, making brute-force attacks much harder.' },
+    ],
+    related: ['url-encoder-decoder', 'slug-generator', 'text-reverser'],
+  },
 ]
 
 export const TOOL_MAP = new Map(TOOLS.map(t => [t.slug, t]))

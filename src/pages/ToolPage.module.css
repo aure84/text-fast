@@ -24,6 +24,19 @@
 .loremControls { display: flex; align-items: center; gap: var(--spacing-md); }
 .numInput { width: 64px; padding: var(--spacing-sm); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-surface); color: var(--text); font-size: 1rem; text-align: center; }
 
+.pwControls { display: flex; flex-direction: column; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
+.pwLengthRow { display: flex; align-items: center; gap: var(--spacing-md); }
+.pwLabel { font-size: 0.95rem; min-width: 100px; }
+.pwSlider { flex: 1; accent-color: var(--primary); }
+.pwCheckboxes { display: flex; flex-wrap: wrap; gap: var(--spacing-sm) var(--spacing-lg); }
+.pwCheck { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer; }
+.pwGenBtn { align-self: flex-start; padding: var(--spacing-sm) var(--spacing-xl); background: var(--primary); color: #fff; border: none; border-radius: var(--radius); font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+.pwGenBtn:hover { opacity: 0.9; }
+.pwOutput { font-size: 1.15rem; font-weight: 600; word-break: break-all; letter-spacing: 0.03em; font-family: var(--font-mono, monospace); }
+.pwMeta { display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); }
+.pwStrength { font-size: 0.85rem; font-weight: 700; text-transform: capitalize; }
+.pwEntropy { font-size: 0.85rem; color: var(--text-muted); }
+
 .introText { font-size: 1rem; line-height: 1.7; color: var(--text); margin-bottom: var(--spacing-lg); }
 .howToSection { margin-bottom: var(--spacing-xl); }
 .howToTitle { font-size: 1.1rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
