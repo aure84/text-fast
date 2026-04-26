@@ -23,3 +23,9 @@
 .slugOutput { font-size: 1.2rem; font-weight: 600; word-break: break-all; padding: var(--spacing-sm) 0; color: var(--primary); }
 .loremControls { display: flex; align-items: center; gap: var(--spacing-md); }
 .numInput { width: 64px; padding: var(--spacing-sm); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-surface); color: var(--text); font-size: 1rem; text-align: center; }
+
+.introText { font-size: 1rem; line-height: 1.7; color: var(--text); margin-bottom: var(--spacing-lg); }
+.howToSection { margin-bottom: var(--spacing-xl); }
+.howToTitle { font-size: 1.1rem; font-weight: 600; margin-bottom: var(--spacing-sm); }
+.howToList { padding-left: 1.5rem; display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.howToList li { font-size: 0.95rem; line-height: 1.6; color: var(--text); }

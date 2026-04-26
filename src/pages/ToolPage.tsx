@@ -69,6 +69,13 @@ export default function ToolPage() {
         <h1 className={styles.heading}>{tool.heading}</h1>
         <p className={styles.sub}>{tool.subheading}</p>
       </div>
+      <p className={styles.introText}>{tool.intro}</p>
+      <div className={styles.howToSection}>
+        <h2 className={styles.howToTitle}>How to use</h2>
+        <ol className={styles.howToList}>
+          {tool.howTo.map((step, i) => <li key={i}>{step}</li>)}
+        </ol>
+      </div>
       {ToolView && <ToolView tool={tool} />}
       <FaqAccordion items={tool.faq} />
       <RelatedTools slugs={tool.related} />

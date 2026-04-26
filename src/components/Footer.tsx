@@ -7,6 +7,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <p>© {new Date().getFullYear()} text-fast.com — Free online text tools</p>
         <nav className={styles.links}>
+          <Link to="/about">About</Link>
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
           <Link to="/cookies">Cookies</Link>

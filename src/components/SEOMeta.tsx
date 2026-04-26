@@ -1,5 +1,12 @@
-import { useEffect } from 'react'
+import { createContext, useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+
+export interface CollectedMeta {
+  title: string
+  description: string
+}
+
+export const SSRMetaContext = createContext<((meta: CollectedMeta) => void) | null>(null)
 
 interface Props {
   title: string
@@ -9,6 +16,11 @@ interface Props {
 
 export default function SEOMeta({ title, description, noIndex = false }: Props) {
   const { pathname } = useLocation()
+  const collect = useContext(SSRMetaContext)
+
+  if (collect) {
+    collect({ title, description })
+  }
 
   useEffect(() => {
     document.title = title
