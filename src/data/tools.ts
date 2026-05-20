@@ -3,6 +3,17 @@ export interface ToolFaq {
   a: string
 }
 
+export interface ToolUseCase {
+  title: string
+  body: string
+}
+
+export interface ToolExample {
+  label: string
+  input: string
+  output: string
+}
+
 export interface ToolMeta {
   slug: string
   title: string
@@ -15,6 +26,9 @@ export interface ToolMeta {
   outputLabel: string
   faq: ToolFaq[]
   related: string[]
+  useCases?: ToolUseCase[]
+  examples?: ToolExample[]
+  extraFaq?: ToolFaq[]
 }
 
 export const TOOLS: ToolMeta[] = [
