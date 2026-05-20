@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 import AppContent from './AppContent'
 import { SSRMetaContext, type CollectedMeta } from './components/SEOMeta'
 import { TOOLS } from './data/tools'
+import { POSTS } from './data/posts'
 
 export function render(url: string): { appHtml: string; meta: CollectedMeta } {
   const meta: CollectedMeta = {
@@ -28,6 +29,8 @@ export function getAllRoutes(): string[] {
     '/privacy',
     '/terms',
     '/cookies',
+    '/blog',
+    ...POSTS.map(p => `/blog/${p.slug}`),
     ...TOOLS.map(t => `/${t.slug}`),
   ]
 }
