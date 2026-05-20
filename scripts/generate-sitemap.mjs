@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs'
 const BASE = 'https://text-fast.com'
 const TODAY = new Date().toISOString().split('T')[0]
 
-const SLUGS = [
+const TOOL_SLUGS = [
   'word-counter',
   'character-counter',
   'lorem-ipsum-generator',
@@ -17,9 +17,21 @@ const SLUGS = [
   'password-generator',
 ]
 
+const BLOG_SLUGS = [
+  'what-is-lorem-ipsum',
+  'keyword-frequency-analysis',
+  'what-is-a-url-slug',
+  'how-to-count-words-online',
+  'title-case-vs-sentence-case',
+  'url-encoding-explained',
+  'strong-password-tips-2026',
+]
+
 const urls = [
   { loc: BASE, priority: '1.0' },
-  ...SLUGS.map(s => ({ loc: `${BASE}/${s}`, priority: '0.9' })),
+  ...TOOL_SLUGS.map(s => ({ loc: `${BASE}/${s}`, priority: '0.9' })),
+  { loc: `${BASE}/blog`, priority: '0.7' },
+  ...BLOG_SLUGS.map(s => ({ loc: `${BASE}/blog/${s}`, priority: '0.8' })),
   { loc: `${BASE}/about`, priority: '0.5' },
   { loc: `${BASE}/privacy`, priority: '0.3' },
   { loc: `${BASE}/terms`, priority: '0.3' },
