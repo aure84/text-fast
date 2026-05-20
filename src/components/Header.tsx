@@ -7,7 +7,10 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo}>text-fast.com</Link>
-        <DarkModeToggle />
+        <div className={styles.nav}>
+          <Link to="/blog" className={styles.navLink}>Blog</Link>
+          <DarkModeToggle />
+        </div>
       </div>
     </header>
   )
