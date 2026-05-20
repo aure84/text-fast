@@ -35,6 +35,49 @@ const TOOL_VIEWS: Record<string, React.ComponentType<{ tool: ToolMeta }>> = {
   'password-generator': PasswordGeneratorView,
 }
 
+function UseCasesSection({ tool }: { tool: ToolMeta }) {
+  if (!tool.useCases?.length) return null
+  return (
+    <div className={styles.useCasesSection}>
+      <h2 className={styles.useCasesTitle}>When to use</h2>
+      <div className={styles.useCaseList}>
+        {tool.useCases.map((uc, i) => (
+          <div key={i} className={styles.useCaseItem}>
+            <p className={styles.useCaseItemTitle}>{uc.title}</p>
+            <p className={styles.useCaseItemBody}>{uc.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ExamplesSection({ tool }: { tool: ToolMeta }) {
+  if (!tool.examples?.length) return null
+  return (
+    <div className={styles.examplesSection}>
+      <h2 className={styles.examplesTitle}>Examples</h2>
+      <div className={styles.exampleList}>
+        {tool.examples.map((ex, i) => (
+          <div key={i} className={styles.exampleItem}>
+            <div className={styles.exampleLabel}>{ex.label}</div>
+            <div className={styles.exampleRow}>
+              <div className={`${styles.exampleCol} ${styles.exampleColIn}`}>
+                <div className={styles.exampleColHead}>Input</div>
+                <div className={styles.exampleColText}>{ex.input}</div>
+              </div>
+              <div className={styles.exampleCol}>
+                <div className={styles.exampleColHead}>Output</div>
+                <div className={styles.exampleColText}>{ex.output}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function ToolPage() {
   const { slug } = useParams<{ slug: string }>()
   const tool = TOOL_MAP.get(slug ?? '')
@@ -79,7 +122,9 @@ export default function ToolPage() {
         </ol>
       </div>
       {ToolView && <ToolView tool={tool} />}
-      <FaqAccordion items={tool.faq} />
+      <UseCasesSection tool={tool} />
+      <ExamplesSection tool={tool} />
+      <FaqAccordion items={[...tool.faq, ...(tool.extraFaq ?? [])]} />
       <RelatedTools slugs={tool.related} />
     </ToolLayout>
   )
