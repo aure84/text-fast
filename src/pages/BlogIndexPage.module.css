@@ -1,0 +1,10 @@
+.main { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg); }
+.hero { margin-bottom: var(--spacing-xl); }
+.heading { font-size: 2rem; font-weight: 700; margin-bottom: var(--spacing-sm); }
+.sub { color: var(--text-muted); font-size: 1.05rem; }
+.list { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+.card { display: block; text-decoration: none; padding: var(--spacing-lg); background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color 0.15s; }
+.card:hover { border-color: var(--primary); }
+.cardTitle { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: var(--spacing-xs); }
+.cardDesc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: var(--spacing-sm); }
+.cardMeta { font-size: 0.8rem; color: var(--text-muted); }
