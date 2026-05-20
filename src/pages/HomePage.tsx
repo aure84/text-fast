@@ -13,6 +13,10 @@ export default function HomePage() {
         <h1 className={styles.heading}>Free Online Text Tools</h1>
         <p className={styles.sub}>Fast, free tools for writers, developers, and marketers. No sign-up required.</p>
       </div>
+      <div className={styles.editorial}>
+        <p>text-fast.com is a collection of free browser-based text tools. No account required — no text is ever sent to a server.</p>
+        <p>Count words and characters, convert text between UPPERCASE and lowercase, generate lorem ipsum placeholder text for mockups, remove duplicate lines and extra whitespace, create URL-friendly slugs from titles, encode and decode URLs, reverse text, analyze word frequency, and generate strong random passwords. Each tool opens instantly and works offline after the first load.</p>
+      </div>
       <ToolGrid />
     </main>
   )
