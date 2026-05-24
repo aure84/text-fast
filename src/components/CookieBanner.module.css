@@ -1,4 +1,8 @@
 .banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
   padding: var(--spacing-md) var(--spacing-lg);
@@ -8,6 +12,21 @@
   gap: var(--spacing-md);
   font-size: 0.9rem;
   flex-wrap: wrap;
+  z-index: 1000;
+}
+.text {
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+}
+.link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
 }
 .btn {
   background: var(--primary);
@@ -16,5 +35,22 @@
   border-radius: var(--radius);
   font-size: 0.9rem;
   white-space: nowrap;
+  border: none;
+  cursor: pointer;
 }
 .btn:hover { background: var(--primary-hover); }
+.btnSecondary {
+  background: transparent;
+  color: var(--text-muted);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.btnSecondary:hover {
+  background: var(--bg-surface);
+  color: var(--text);
+  border-color: var(--text-muted);
+}

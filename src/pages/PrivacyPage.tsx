@@ -29,7 +29,7 @@ export default function PrivacyPage() {
       />
 
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>Privacy Policy</h1>
-      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: April 24, 2026</p>
+      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: 2026-05-24</p>
 
       <p style={pStyle}>
         This Privacy Policy explains how text-fast.com ("we", "us", or "our") collects, uses, and protects
@@ -46,12 +46,13 @@ export default function PrivacyPage() {
 
       <h2 style={h2Style}>2. What Data We Collect</h2>
       <p style={pStyle}>
-        We do not collect, store, or transmit any personal data through the tools on this website. All text
+        <strong>Text you enter into any tool is never collected, stored, or transmitted.</strong> All text
         processing — word counting, character counting, case conversion, lorem ipsum generation, and all other
         tools — runs entirely in your browser. Your text never leaves your device.
       </p>
       <p style={pStyle}>
-        The following data may be collected indirectly through third-party services integrated on the site:
+        The following data may be collected indirectly through third-party services integrated on the site,
+        only when you have given consent:
       </p>
       <ul style={ulStyle}>
         <li>Browser type and version</li>
@@ -80,7 +81,8 @@ export default function PrivacyPage() {
       <p style={{ ...pStyle, fontWeight: 600, color: 'inherit', marginBottom: 'var(--spacing-md)' }}>Google Analytics 4</p>
       <p style={pStyle}>
         We use Google Analytics 4 to understand site traffic and usage patterns. Google Analytics uses cookies
-        and collects anonymised usage data. You can opt out of Google Analytics tracking via the{' '}
+        and collects anonymised usage data. Google Analytics is only loaded after you accept analytics cookies
+        via the consent banner. You can also opt out at any time via the{' '}
         <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>
           Google Analytics Opt-out Browser Add-on
         </a>.
@@ -93,8 +95,9 @@ export default function PrivacyPage() {
       <p style={{ ...pStyle, fontWeight: 600, color: 'inherit', marginBottom: 'var(--spacing-md)' }}>Google AdSense</p>
       <p style={pStyle}>
         We display advertisements served by Google AdSense (publisher ID: ca-pub-6164838820338976). Google
-        AdSense uses cookies to serve ads based on your prior visits to this and other sites. You may opt out
-        of personalised advertising by visiting{' '}
+        AdSense uses cookies to serve ads based on your prior visits to this and other sites. Advertising
+        cookies are only loaded after you accept them via the consent banner. You may also opt out of
+        personalised advertising by visiting{' '}
         <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>
           Google Ads Settings
         </a>.
@@ -118,8 +121,9 @@ export default function PrivacyPage() {
         We use cookies and similar technologies. A detailed breakdown of the cookies used on this site is
         available in our{' '}
         <a href="/cookies" style={{ color: 'var(--primary)' }}>Cookie Policy</a>.
-        On your first visit, we display a cookie consent banner. Your preference is stored in your browser's
-        localStorage.
+        On your first visit, we display a cookie consent banner with Accept and Decline options. Non-essential
+        cookies (analytics, advertising) are only set if you click Accept. Your preference is stored in your
+        browser's localStorage under the key <code style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '0.1em 0.35em', borderRadius: '3px', fontSize: '0.875em' }}>cookie_consent</code>.
       </p>
 
       <h2 style={h2Style}>6. Legal Basis for Processing (GDPR)</h2>
@@ -138,8 +142,8 @@ export default function PrivacyPage() {
         </li>
       </ul>
       <p style={pStyle}>
-        You may withdraw consent at any time by clearing your cookies and adjusting your preferences via the
-        cookie banner.
+        You may withdraw consent at any time by clearing the <code style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '0.1em 0.35em', borderRadius: '3px', fontSize: '0.875em' }}>cookie_consent</code> key from your browser's
+        localStorage and reloading the page. The consent banner will re-appear and you can make a new choice.
       </p>
 
       <h2 style={h2Style}>7. Your Rights (GDPR)</h2>
@@ -163,9 +167,10 @@ export default function PrivacyPage() {
 
       <h2 style={h2Style}>8. Data Retention</h2>
       <p style={pStyle}>
-        We do not directly store personal data. Data collected by Google Analytics and Google AdSense is
-        retained according to Google's own data retention policies. Consent preferences stored in your
-        browser's localStorage remain until you clear your browser data.
+        We do not directly store personal data. Data collected by Google Analytics is retained for 26 months
+        by default, per Google's data retention settings. Data collected by Google AdSense is retained
+        according to Google's own policies. Consent preferences stored in your browser's localStorage remain
+        until you clear your browser data or manually remove the <code style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '0.1em 0.35em', borderRadius: '3px', fontSize: '0.875em' }}>cookie_consent</code> key.
       </p>
 
       <h2 style={h2Style}>9. Children's Privacy</h2>

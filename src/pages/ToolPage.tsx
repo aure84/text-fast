@@ -1,4 +1,5 @@
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import NotFoundPage from './NotFoundPage'
 import { useState, useMemo } from 'react'
 import { TOOL_MAP, type ToolMeta } from '../data/tools'
 import ToolLayout from '../components/ToolLayout'
@@ -81,14 +82,16 @@ function ExamplesSection({ tool }: { tool: ToolMeta }) {
 export default function ToolPage() {
   const { slug } = useParams<{ slug: string }>()
   const tool = TOOL_MAP.get(slug ?? '')
-  if (!tool) return <Navigate to="/404" replace />
+  if (!tool) return <NotFoundPage />
 
   const ToolView = TOOL_VIEWS[tool.slug]
+
+  const allFaq = [...tool.faq, ...(tool.extraFaq ?? [])]
 
   const faqLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: tool.faq.map(f => ({
+    mainEntity: allFaq.map(f => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -99,9 +102,11 @@ export default function ToolPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: tool.heading,
+    description: tool.description,
     url: `https://text-fast.com/${tool.slug}`,
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'All',
+    isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 
@@ -124,7 +129,7 @@ export default function ToolPage() {
       {ToolView && <ToolView tool={tool} />}
       <UseCasesSection tool={tool} />
       <ExamplesSection tool={tool} />
-      <FaqAccordion items={[...tool.faq, ...(tool.extraFaq ?? [])]} />
+      <FaqAccordion items={allFaq} />
       <RelatedTools slugs={tool.related} />
     </ToolLayout>
   )

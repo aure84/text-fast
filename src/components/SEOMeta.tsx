@@ -4,6 +4,14 @@ import { useLocation } from 'react-router-dom'
 export interface CollectedMeta {
   title: string
   description: string
+  canonical: string
+  ogTitle: string
+  ogDescription: string
+  ogUrl: string
+  ogType: string
+  twitterCard: string
+  twitterTitle: string
+  twitterDescription: string
 }
 
 export const SSRMetaContext = createContext<((meta: CollectedMeta) => void) | null>(null)
@@ -17,9 +25,21 @@ interface Props {
 export default function SEOMeta({ title, description, noIndex = false }: Props) {
   const { pathname } = useLocation()
   const collect = useContext(SSRMetaContext)
+  const canonicalUrl = `https://text-fast.com${pathname}`
 
   if (collect) {
-    collect({ title, description })
+    collect({
+      title,
+      description,
+      canonical: canonicalUrl,
+      ogTitle: title,
+      ogDescription: description,
+      ogUrl: canonicalUrl,
+      ogType: 'website',
+      twitterCard: 'summary_large_image',
+      twitterTitle: title,
+      twitterDescription: description,
+    })
   }
 
   useEffect(() => {
@@ -46,12 +66,12 @@ export default function SEOMeta({ title, description, noIndex = false }: Props) 
     setProp('og:title', title)
     setProp('og:description', description)
     setProp('og:type', 'website')
-    setProp('og:url', `https://text-fast.com${pathname}`)
+    setProp('og:url', canonicalUrl)
     setProp('og:site_name', 'text-fast.com')
     setMeta('twitter:card', 'summary_large_image')
     setMeta('twitter:title', title)
     setMeta('twitter:description', description)
-    setLink('canonical', `https://text-fast.com${pathname}`)
+    setLink('canonical', canonicalUrl)
   }, [title, description, noIndex, pathname])
 
   return null

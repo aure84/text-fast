@@ -31,15 +31,58 @@ for (const url of routes) {
   try {
     const { appHtml, meta } = render(url)
 
-    const html = template
+    let html = template
+      // title
       .replace(
         '<title>text-fast.com — Free Online Text Tools</title>',
         `<title>${escapeHtml(meta.title)}</title>`
       )
+      // description
       .replace(
-        'content="Free online text tools: word counter, character counter, case converter, lorem ipsum generator, and more. Fast, free, no sign-up."',
-        `content="${escapeHtml(meta.description)}"`
+        /(<meta name="description" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.description)}$2`
       )
+      // canonical
+      .replace(
+        /(<link rel="canonical" href=")[^"]*(")/,
+        `$1${escapeHtml(meta.canonical)}$2`
+      )
+      // og:title
+      .replace(
+        /(<meta property="og:title" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.ogTitle)}$2`
+      )
+      // og:description
+      .replace(
+        /(<meta property="og:description" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.ogDescription)}$2`
+      )
+      // og:type
+      .replace(
+        /(<meta property="og:type" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.ogType)}$2`
+      )
+      // og:url
+      .replace(
+        /(<meta property="og:url" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.ogUrl)}$2`
+      )
+      // twitter:card
+      .replace(
+        /(<meta name="twitter:card" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.twitterCard)}$2`
+      )
+      // twitter:title
+      .replace(
+        /(<meta name="twitter:title" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.twitterTitle)}$2`
+      )
+      // twitter:description
+      .replace(
+        /(<meta name="twitter:description" content=")[^"]*(")/,
+        `$1${escapeHtml(meta.twitterDescription)}$2`
+      )
+      // app html
       .replace('<!--app-html-->', appHtml)
 
     const dir = url === '/'
@@ -60,5 +103,6 @@ rmSync(resolve(__dirname, 'dist/server'), { recursive: true, force: true })
 console.log(`Done: ${ok} prerendered, ${fail} skipped.`)
 
 function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  if (str == null) return ''
+  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }

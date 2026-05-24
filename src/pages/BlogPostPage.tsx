@@ -16,6 +16,7 @@ export default function BlogPostPage() {
     headline: post.title,
     description: post.description,
     datePublished: post.publishDate,
+    dateModified: post.publishDate,
     author: { '@type': 'Organization', name: 'text-fast.com', url: 'https://text-fast.com' },
     publisher: { '@type': 'Organization', name: 'text-fast.com', url: 'https://text-fast.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://text-fast.com/blog/${post.slug}` },

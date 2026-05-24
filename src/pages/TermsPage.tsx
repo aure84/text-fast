@@ -29,7 +29,7 @@ export default function TermsPage() {
       />
 
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>Terms of Service</h1>
-      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: April 24, 2026</p>
+      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: 2026-05-24</p>
 
       <p style={pStyle}>
         By accessing or using text-fast.com ("the site", "we", "us", or "our"), you agree to be bound by these
@@ -70,8 +70,9 @@ export default function TermsPage() {
 
       <h2 style={h2Style}>4. Disclaimer of Warranties</h2>
       <p style={pStyle}>
-        The site and all tools are provided "as is" and "as available" without any warranties of any kind,
-        either express or implied. We do not warrant that:
+        THE SITE AND ALL TOOLS ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND,
+        EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+        PARTICULAR PURPOSE, OR NON-INFRINGEMENT. We do not warrant that:
       </p>
       <ul style={ulStyle}>
         <li>The site will be available at all times or free from errors</li>
@@ -85,9 +86,9 @@ export default function TermsPage() {
 
       <h2 style={h2Style}>5. Limitation of Liability</h2>
       <p style={pStyle}>
-        To the fullest extent permitted by applicable law, we shall not be liable for any indirect, incidental,
-        special, consequential, or punitive damages arising from your use of — or inability to use — the site
-        or its tools, even if we have been advised of the possibility of such damages.
+        TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT,
+        INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF — OR INABILITY TO
+        USE — THE SITE OR ITS TOOLS, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
       </p>
       <p style={pStyle}>
         Our total liability to you for any claim arising from your use of the site shall not exceed €100.

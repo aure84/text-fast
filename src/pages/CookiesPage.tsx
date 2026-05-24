@@ -48,7 +48,7 @@ export default function CookiesPage() {
       />
 
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 'var(--spacing-md)' }}>Cookie Policy</h1>
-      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: April 24, 2026</p>
+      <p style={{ ...pStyle, fontSize: '0.875rem', marginBottom: 'var(--spacing-xl)' }}>Last updated: 2026-05-24</p>
 
       <p style={pStyle}>
         This Cookie Policy explains what cookies are, which cookies text-fast.com uses, and how you can
@@ -89,7 +89,7 @@ export default function CookiesPage() {
             <tr>
               <td style={tdStyle}>cookie_consent</td>
               <td style={tdStyle}>text-fast.com</td>
-              <td style={tdStyle}>Stores your cookie consent preference so the banner is not shown on every visit</td>
+              <td style={tdStyle}>Stores your cookie consent preference (accepted/declined) so the banner is not shown on every visit</td>
               <td style={tdStyle}>localStorage</td>
               <td style={tdStyle}>Until browser data is cleared</td>
             </tr>
@@ -99,7 +99,8 @@ export default function CookiesPage() {
 
       <p style={{ ...pStyle, fontWeight: 600, color: 'inherit' }}>Analytics Cookies</p>
       <p style={pStyle}>
-        These help us understand how visitors use the site. They are only set if you accept analytics cookies.
+        These help us understand how visitors use the site. They are only set if you click Accept on the
+        cookie consent banner.
       </p>
       <div style={tableWrapStyle}>
         <table style={tableStyle}>
@@ -133,8 +134,11 @@ export default function CookiesPage() {
 
       <p style={{ ...pStyle, fontWeight: 600, color: 'inherit' }}>Advertising Cookies</p>
       <p style={pStyle}>
-        These are set by Google AdSense to serve relevant advertisements. They are only active if you accept
-        advertising cookies.
+        These are set by Google AdSense to serve relevant advertisements. They are only active if you click
+        Accept on the cookie consent banner. Learn more about how Google uses this data at{' '}
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>
+          policies.google.com/technologies/ads
+        </a>.
       </p>
       <div style={tableWrapStyle}>
         <table style={tableStyle}>
@@ -175,12 +179,13 @@ export default function CookiesPage() {
 
       <h2 style={h2Style}>3. Your Consent</h2>
       <p style={pStyle}>
-        On your first visit to text-fast.com, a cookie consent banner is shown. You can accept all cookies,
-        accept only necessary cookies, or customise your preferences. Your choice is stored in localStorage as
+        On your first visit to text-fast.com, a cookie consent banner is shown at the bottom of the page.
+        You can click <strong>Accept</strong> to allow all cookies, or <strong>Decline</strong> to allow
+        only strictly necessary storage. Your choice is stored in localStorage under the key{' '}
         <code style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '0.1em 0.35em', borderRadius: '3px', fontSize: '0.875em' }}>cookie_consent</code>.
       </p>
       <p style={pStyle}>
-        Analytics and advertising cookies are only loaded after you give consent. Strictly necessary
+        Analytics and advertising cookies are only loaded after you click Accept. Strictly necessary
         localStorage entries are set regardless of consent because they are required for the consent mechanism
         itself to function.
       </p>
@@ -191,12 +196,13 @@ export default function CookiesPage() {
       </p>
       <ul style={{ ...pStyle, paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <strong>Cookie banner</strong> — clear your browser's localStorage for text-fast.com and reload
-          the page to see the banner again
+          <strong>Reset consent banner</strong> — open your browser's developer tools, go to Application
+          &gt; Local Storage, delete the <code style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', padding: '0.1em 0.35em', borderRadius: '3px', fontSize: '0.875em' }}>cookie_consent</code> key for text-fast.com,
+          then reload the page. The banner will re-appear.
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
           <strong>Browser settings</strong> — most browsers allow you to block or delete cookies. Refer to
-          your browser's help documentation for instructions
+          your browser's help documentation for instructions.
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
           <strong>Google opt-out</strong> — visit{' '}
@@ -206,7 +212,7 @@ export default function CookiesPage() {
           or install the{' '}
           <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>
             Google Analytics Opt-out Add-on
-          </a>
+          </a>.
         </li>
         <li>
           <strong>Industry opt-outs</strong> — visit{' '}
@@ -216,12 +222,12 @@ export default function CookiesPage() {
           (EU) or{' '}
           <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>
             AboutAds.info
-          </a>
+          </a>.
         </li>
       </ul>
       <p style={pStyle}>
-        Please note that disabling cookies may affect how parts of the site function and may result in less
-        relevant advertising.
+        Please note that declining non-essential cookies may result in less relevant advertising, but all
+        tools will continue to work normally.
       </p>
 
       <h2 style={h2Style}>5. Do Not Track</h2>

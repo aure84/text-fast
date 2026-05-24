@@ -6,7 +6,7 @@ export default function AboutPage() {
     <main className={styles.page}>
       <SEOMeta
         title="About — text-fast.com"
-        description="text-fast.com is a collection of free, fast online text tools for writers, developers, and marketers. No sign-up, no ads, no data collection."
+        description="text-fast.com is a collection of free, fast online text tools for writers, developers, and marketers. No sign-up required. All processing happens in your browser."
       />
       <div className={styles.content}>
         <h1 className={styles.heading}>About text-fast.com</h1>
@@ -18,7 +18,7 @@ export default function AboutPage() {
 
         <h2 className={styles.h2}>What we offer</h2>
         <p>
-          We currently offer ten text utilities covering the most common text processing tasks:
+          We currently offer eleven text utilities covering the most common text processing tasks:
           counting words and characters, converting text case, removing duplicates and extra whitespace,
           generating lorem ipsum placeholder text, analyzing word frequency, creating URL slugs,
           encoding and decoding URLs, and reversing text.
@@ -44,14 +44,15 @@ export default function AboutPage() {
         <p>
           All text processing happens locally in your browser using JavaScript.
           No text you enter is transmitted to any server, stored, or logged.
-          We collect only basic, anonymous usage statistics via Google Analytics to understand
-          which tools are most useful. See our <a href="/privacy">Privacy Policy</a> for full details.
+          We collect only basic, anonymous usage statistics via Google Analytics (with your consent)
+          to understand which tools are most useful. The site is supported by Google AdSense advertising.
+          See our <a href="/privacy">Privacy Policy</a> for full details.
         </p>
 
         <h2 className={styles.h2}>Contact</h2>
         <p>
           Have a suggestion for a new tool, found a bug, or want to get in touch?
-          Send an email to <a href="mailto:hello@text-fast.com">hello@text-fast.com</a>.
+          Send an email to <a href="mailto:aure84@gmail.com">aure84@gmail.com</a>.
         </p>
       </div>
     </main>

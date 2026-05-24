@@ -183,7 +183,7 @@ export const TOOLS: ToolMeta[] = [
   {
     slug: 'duplicate-line-remover',
     title: 'Duplicate Line Remover — Remove Duplicate Lines Online',
-    description: 'Remove duplicate lines from any text instantly. Keep unique lines only. Free online tool.',
+    description: 'Remove duplicate lines from any text instantly. Free online duplicate line remover — clean keyword lists, deduplicate emails, and strip repeated log entries.',
     heading: 'Duplicate Line Remover',
     subheading: 'Paste text and remove all duplicate lines in one click.',
     intro: 'The Duplicate Line Remover strips repeated lines from any block of text, keeping only the first occurrence of each line. It is useful for cleaning up keyword lists, deduplicating spreadsheet exports, removing repeated log entries, or any task where you need only unique lines. All processing happens locally in your browser.',
@@ -331,7 +331,7 @@ export const TOOLS: ToolMeta[] = [
   {
     slug: 'url-encoder-decoder',
     title: 'URL Encoder / Decoder — Encode and Decode URLs Online',
-    description: 'Encode or decode URLs and query strings online. Free URL encoder and decoder tool.',
+    description: 'Encode or decode URLs and query strings online. Free URL encoder and decoder — convert special characters to %XX percent encoding or restore the original text instantly.',
     heading: 'URL Encoder / Decoder',
     subheading: 'Encode special characters for URLs or decode percent-encoded strings.',
     intro: 'The URL Encoder / Decoder converts text to percent-encoded URL format and back. Encoding replaces special characters — spaces, ampersands, quotes — with their %XX equivalents so they are safe to include in a URL. Decoding reverses the process and restores the original text. Both results appear side by side from a single input, so you can copy whichever version you need.',
@@ -368,7 +368,7 @@ export const TOOLS: ToolMeta[] = [
   {
     slug: 'text-reverser',
     title: 'Text Reverser — Reverse Text Online Free',
-    description: 'Reverse any text, words, or lines online. Free text reverser tool.',
+    description: 'Reverse any text online — flip characters, reverse word order, or reverse line order. Free text reverser tool, no sign-up required.',
     heading: 'Text Reverser',
     subheading: 'Reverse your text character by character, word by word, or line by line.',
     intro: 'The Text Reverser flips your text in three different ways: character by character (mirrors the entire string), word by word (reverses word order while keeping each word intact), or line by line (reverses the order of lines while keeping each line intact). Useful for creative text effects, puzzle generation, testing string handling, or simply reversing a list.',
